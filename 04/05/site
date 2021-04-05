@@ -10,6 +10,11 @@ parent(a,d).
 parent(b,e).
 parent(b,f).
 grand(X,Z):-parent(X,Y), parent(Y,Z), not(X=Y).
-
 //---------------------------------
 시맨틱 네트워크
+//-------------------------------------
+https://quickdraw.withgoogle.com/
+그림맞추기
+//------------------------------------
+https://www.mladdict.com/linear-regression-simulator
+Linear Regression simulator / 그래프
