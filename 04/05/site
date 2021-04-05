@@ -1,0 +1,15 @@
+양배추, 사람, 양 강 너머로 옮기기탐색/ 늑대, 양배추, 사람, 양 강 너머로 옮기기
+//-------------------------------------
+https://deniz.co/8-puzzle-solver/ A*
+//-------------------------------------
+https://swish.swi-prolog.org/
+
+parent(a,b).
+parent(a,c).
+parent(a,d).
+parent(b,e).
+parent(b,f).
+grand(X,Z):-parent(X,Y), parent(Y,Z), not(X=Y).
+
+//---------------------------------
+시맨틱 네트워크
