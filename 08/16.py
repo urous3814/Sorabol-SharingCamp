@@ -28,3 +28,15 @@ while True:
     i = temperature()
     i=i%3
     display.show(a[i])
+    
+#과제7.py
+from microbit import *
+import random as rd
+x = y = 0 
+while True :
+    if pin0.is_touched() :
+        x=rd.randint(0,4)
+        y=rd.randint(0,4)
+    display.clear() 
+    display.set_pixel(x, y, 9) 
+    sleep(300)
