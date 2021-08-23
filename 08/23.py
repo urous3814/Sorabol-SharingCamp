@@ -86,3 +86,33 @@ while True:
             display.show(Image.HAPPY)
         else:
             display.show(Image.SAD)
+
+#--------------------두더지잡기-------------
+# Add your Python code here. E.g.
+from microbit import *
+import random as rd
+
+def Light(H, M):
+    display.clear()
+    display.set_pixel(H[0], H[1], 9)
+    display.set_pixel(M[0], M[1], 5)
+    
+def Mole():
+    x = rd.randint(0, 4)
+    y = rd.randint(0, 4)
+    return [x, y]
+
+H = [2, 2]
+M = Mole()
+Light(H, M)
+while True:
+    if button_a.was_pressed():
+        H[0] = (H[0] + 1) % 5
+        Light(H, M)
+    
+    elif button_b.was_pressed():
+        H[1] = (H[1] + 1) % 5
+        Light(H, M)
+    if H[0] == M[0] and H[1] == M[1]:
+        M = Mole()
+        Light(H, M)
