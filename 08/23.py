@@ -58,3 +58,22 @@ while True:
         else:
             display.show(Image.SAD)
         break
+
+#-----------------------반응속도 둘이---------------------------------------
+# Add your Python code here. E.g.
+from microbit import *
+import radio
+
+radio.on()
+radio.config(group = 2)
+Rbt = 0
+
+while True:
+    if button_a.is_pressed():
+        radio.send('A')
+        display.show(Image.HEART)
+        
+    R = radio.receive()
+    if R != None:
+        Rbt = running_time()
+        display.show(Image.HEART)
