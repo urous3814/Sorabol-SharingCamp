@@ -79,3 +79,10 @@ while True:
     if R != None:
         Rbt = running_time()
         display.show(Image.HEART)
+        
+    if button_b.was_pressed():
+        term = abs(running_time() - Rbt)
+        if term <= 300:
+            display.show(Image.HAPPY)
+        else:
+            display.show(Image.SAD)
