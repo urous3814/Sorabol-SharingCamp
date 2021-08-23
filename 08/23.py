@@ -1,4 +1,4 @@
-# Add your Python code here. E.g.   
+# Add your Python code here. E.g.
 from microbit import *
 
 
@@ -26,6 +26,8 @@ while True:
         sleep(300)
     if button_b.is_pressed():
         a = x*y
+        display.show(a)
+        sleep(300)
     
   #------------------이심전심---------------------------------------
   
