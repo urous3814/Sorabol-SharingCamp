@@ -105,6 +105,8 @@ def Mole():
 H = [2, 2]
 M = Mole()
 Light(H, M)
+point = 0
+start = running_time()
 while True:
     if button_a.was_pressed():
         H[0] = (H[0] + 1) % 5
@@ -114,5 +116,9 @@ while True:
         H[1] = (H[1] + 1) % 5
         Light(H, M)
     if H[0] == M[0] and H[1] == M[1]:
+        point += 1
         M = Mole()
         Light(H, M)
+        
+    if running_time()-start > 30000:
+        display.scroll(point, loop = True)
