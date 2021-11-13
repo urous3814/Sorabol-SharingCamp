@@ -9,17 +9,19 @@ basic.forever(function () {
             maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 20)
             maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 50)
         } else if (x < 120) {
-            maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 50)
-        } else if (x < 200) {
             maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 50)
             maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 35)
+        } else if (x < 200) {
+            maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 50)
         } else if (x < 260) {
             maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 50)
-            maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 20)
+            maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 35)
         } else {
-            basic.pause(100)
+            maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 50)
+            maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 20)
         }
-    } else if (huskylens.isAppear(2, HUSKYLENSResultType_t.HUSKYLENSResultBlock)) {
+        basic.pause(100)
+    } else {
         maqueen.motorStop(maqueen.Motors.All)
     }
 })
