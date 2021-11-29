@@ -8,7 +8,6 @@ function 태그인식 () {
                 continue;
             }
             maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
-            huskylens.initMode(protocolAlgorithm.ALGORITHM_FACE_RECOGNITION)
             basic.showNumber(ㅇㅇㅇ[인식 - 1])
             얼굴인식()
             break;
@@ -17,8 +16,9 @@ function 태그인식 () {
     }
 }
 function 얼굴인식 () {
-    huskylens.request()
     basic.pause(2000)
+    huskylens.initMode(protocolAlgorithm.ALGORITHM_FACE_RECOGNITION)
+    huskylens.request()
     while (얼굴 == 0) {
         huskylens.request()
         if (huskylens.isAppear_s(HUSKYLENSResultType_t.HUSKYLENSResultBlock)) {
@@ -75,3 +75,4 @@ for (let index = 0; index < 5; index++) {
     basic.pause(1000)
 }
 basic.pause(1000)
+
